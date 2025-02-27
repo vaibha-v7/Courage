@@ -187,7 +187,7 @@ async function getJoke(){
     try {
         let response =await fetch("https://v2.jokeapi.dev/joke/Any?type=single");
         let data= await response.json();
-        console.log(data);
+        // console.log(data);
         return(data.joke);
         
     } catch (error) {
