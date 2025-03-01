@@ -760,11 +760,10 @@ client.on(Events.InteractionCreate, async interaction => {
 
     else if (interaction.commandName === "wouldyourather") {
         let random3 = getRandomNumber3();
+        let user = interaction.options.getUser('mention') || interaction.user;
 
-        const embed_WYR = new EmbedBuilder()
-            .setColor("Random")
-            .setTitle(`${wouldYouRatherQuestions[random3]}`)
-        interaction.reply({ embeds: [embed_WYR] });
+       
+        interaction.reply(`**<@${user.id}>  ${wouldYouRatherQuestions[random3]}**`);
     }
 
     else if(interaction.commandName === "roast"){
@@ -779,6 +778,7 @@ client.on(Events.InteractionCreate, async interaction => {
         // interaction.reply({embeds:[embed_roast]});
 
         interaction.reply(`**<@${mention.id}> ${savageRoasts[random5]}**`);
+
     }
 });
 

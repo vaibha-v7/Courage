@@ -26,6 +26,15 @@ const commands = [
     {
       name:'wouldyourather',
       description:"Asks Would you rather",
+      options:[
+        {
+          name: 'mention',
+          description:'mention the person u want to ask question',
+          type: ApplicationCommandOptionType.User,
+          // required:true,
+          
+        }
+      ]
     },
 
     {
