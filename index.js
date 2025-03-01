@@ -769,14 +769,9 @@ client.on(Events.InteractionCreate, async interaction => {
     else if(interaction.commandName === "roast"){
         let mention = interaction.options.getUser('target');
         
-        // console.log(mention)
+        
         let random5 = getRandomNumber5();
-        // const embed_roast= new EmbedBuilder()
-        // .setColor("Random")
-        // .setDescription(`**<@${mention.id}> ${savageRoasts[random5]}**`)
-
-        // interaction.reply({embeds:[embed_roast]});
-
+    
         interaction.reply(`**<@${mention.id}> ${savageRoasts[random5]}**`);
 
     }
