@@ -1,4 +1,4 @@
-import { REST, Routes, SlashCommandBuilder,EmbedBuilder } from 'discord.js';
+import { REST, Routes, SlashCommandBuilder,EmbedBuilder, Options, ApplicationCommandOptionType } from 'discord.js';
 import dotenv from 'dotenv';
 dotenv.config();
 
@@ -30,7 +30,15 @@ const commands = [
 
     {
       name:'roast',
-      description:'Roasts the person'
+      description:'Roasts the person',
+      options:[
+        {
+          name: 'target',
+          description: "mention person you want to roast",
+          type :  ApplicationCommandOptionType.User,
+          required: true,
+        }
+      ]
     },
 
 

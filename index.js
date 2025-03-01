@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-import { Client, Events, GatewayIntentBits, SlashCommandBuilder, EmbedBuilder, ActivityType } from 'discord.js';
+import { Client, Events, GatewayIntentBits, SlashCommandBuilder, EmbedBuilder, ActivityType} from 'discord.js';
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.MessageContent] });
 
@@ -768,12 +768,17 @@ client.on(Events.InteractionCreate, async interaction => {
     }
 
     else if(interaction.commandName === "roast"){
+        let mention = interaction.options.getUser('target');
+        
+        // console.log(mention)
         let random5 = getRandomNumber5();
-        const embed_roast= new EmbedBuilder()
-        .setColor("Random")
-        .setTitle(`${savageRoasts[random5]}`)
+        // const embed_roast= new EmbedBuilder()
+        // .setColor("Random")
+        // .setDescription(`**<@${mention.id}> ${savageRoasts[random5]}**`)
 
-        interaction.reply({embeds:[embed_roast]});
+        // interaction.reply({embeds:[embed_roast]});
+
+        interaction.reply(`**<@${mention.id}> ${savageRoasts[random5]}**`);
     }
 });
 
