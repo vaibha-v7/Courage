@@ -775,7 +775,24 @@ client.on(Events.InteractionCreate, async interaction => {
         interaction.reply(`**<@${mention.id}> ${savageRoasts[random5]}**`);
 
     }
+
+    
+
+    
+    
 });
+
+client.on(Events.InteractionCreate,interaction => {
+    const pinggg = new SlashCommandBuilder()
+    .setName("pinggg")
+    .setDescription("Replyyy deta haiiii");
+
+    client.application.commands.create(pinggg);
+    if(interaction.commandName === "pinggg"){
+
+        interaction.reply("ponggggg");
+    }
+})
 
 
 
@@ -787,6 +804,8 @@ client.login(process.env.TOKEN);
 //git push
 //host
 //developer title
+
+
 
 
 
